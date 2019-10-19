@@ -1,4 +1,14 @@
 export default class List {
+    getTasks(listIndex) {
+        let template = "<ul>";
+        this.tasks.forEach((T, i) => {
+            template += `
+            <li> ${T} <span class="text-danger" onclick="app.listController.removeTask(${listIndex}, ${i}">X)</span></li>`;
+        });
+        template += "</ul>";
+        return template;
+    }
+
     constructor(data) {
         this.taskName = data.taskName
         this.tasks = data.tasks
@@ -29,5 +39,14 @@ export default class List {
         </div> 
         </form>
         `;
+        template += `
+        <div class="btn-group" role="group" aria - label = "Basic example" >
+            <button type = "button" class = "btn btn-secondary" > To Do</button> 
+            <button type = "button" class = "btn btn-secondary" > Complete </button> 
+        </div>
+            `;
+        return template;
     }
+
+
 }
