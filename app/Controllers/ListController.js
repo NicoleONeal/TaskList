@@ -4,7 +4,7 @@ let _listService = new ListService()
 
 function _drawLists() {
     let template = "":
-        let lists = _listService.getLists;
+        let lists = _listService.Lists;
     lists.forEach((list, i) => {
         template += list.getTemplate(i);
     });
@@ -13,9 +13,10 @@ function _drawLists() {
 
 export default class ListController {
     constructor() {
-        _listService.getLists();
+        console.log("testing list controller");
         _drawLists();
     }
+
     addList(event) {
         event.preventDefault();
         let formData = event.target
@@ -44,10 +45,5 @@ export default class ListController {
         _listService.removeTask(listIndex, taskIndex);
         _drawLists();
     }
-
-
-
-
-
 
 }

@@ -24,7 +24,11 @@ export default class ValuesService {
         this.loadLists();
     }
 
-    getLists() {
+    constructor() {
+        this.loadLists();
+    }
+
+    get Lists() {
         return _state.lists.map(L => new List(L));
     }
 
