@@ -10,15 +10,15 @@ export default class List {
     }
 
     constructor(data) {
-        this.taskName = data.taskName
+        this.listName = data.listName
         this.tasks = data.tasks
     }
 
     getTemplate(index) {
         let template = `
         <div class="col-4 border"
-        <h1>${this.taskName}</h1>
-        <h4>${this.tasks}</h4>
+        <h1>${this.listName}</h1>
+        <h4>Tasks:</h4>
     `;
         template += this.getTasks(index);
         template += `
@@ -33,7 +33,7 @@ export default class List {
                 aria - describedby = "button-addon2"
                 required/>
             <div class = "input-group-append">
-            <button class = "btn btn-outline-secondary" type = "submit" id = "button-addon2">
+            <button class = "btn btn-secondary" type = "submit" id = "button-addon2">
             Add New Task </button> 
             </div> 
         </div> 
@@ -41,8 +41,9 @@ export default class List {
         `;
         template += `
         <div class="btn-group" role="group" aria - label = "Basic example" >
-            <button type = "button" class = "btn btn-secondary" > To Do</button> 
-            <button type = "button" class = "btn btn-secondary" > Complete </button> 
+          <button type = "button" class = "btn btn-info onclick="app.listController.removeList(${index})">Delete To-Do List</button> 
+          <button type = "button" class = "btn btn-info onclick="app.listController.moveListToDo(${index})"> Move to To-Do</button> 
+          <button type = "button" class = "btn btn-info onclick="app.listController.moveListComplete(${index})"> Move to Complete </button> 
         </div>
             `;
         return template;

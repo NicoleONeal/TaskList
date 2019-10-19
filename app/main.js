@@ -1,12 +1,12 @@
-import ListController from "./Controllers/listController.js";
+import listController from "./Controllers/listController.js";
 
-//NOTE This should be good to go
+
 class App {
     constructor() {
         this.controllers = {
-            listController: new ListController()
+            listController: new listController()
         }
     }
 }
 
-window['app'] = new App()
+window['app'] = new App();
