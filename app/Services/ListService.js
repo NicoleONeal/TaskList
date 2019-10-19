@@ -1,7 +1,16 @@
 import List from "../Models/list.js";
 
 let _state = {
-    lists: []
+    // lists: []
+    lists: [{
+            listName: "List 1",
+            tasks: ['task 1 ', 'task 2', 'task3']
+        },
+        {
+            listName: "List 2",
+            tasks: ['task 1 ', 'task 2', 'task3']
+        }
+    ]
 }
 
 export default class listService {
@@ -15,7 +24,7 @@ export default class listService {
     }
 
     addTask(task, listIndex) {
-        _state.lists[listIndex.tasks.push(task)];
+        _state.lists[listIndex].tasks.push(task);
         this.saveLists();
     }
 
@@ -34,11 +43,11 @@ export default class listService {
     }
 
     saveLists() {
-        localStorage.setItem('lists', JSON.stringify(_state.lists))
+        localStorage.setItem("lists", JSON.stringify(_state.lists));
     }
 
     loadLists() {
-        let savedLists = JSON.parse(localStorage.getItem("lists"))
+        let savedLists = JSON.parse(localStorage.getItem("lists"));
         if (savedLists) {
             _state.lists = savedLists;
         }

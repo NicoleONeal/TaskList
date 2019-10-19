@@ -11,29 +11,33 @@ function _drawLists() {
     document.querySelector("#lists").innerHTML = template;
 }
 
-export default class ListController {
+export default class listController {
     constructor() {
         console.log("testing list controller");
         _drawLists();
     }
 
     addList(event) {
+        console.log('addList called', event);
         event.preventDefault();
         let formData = event.target
         let newList = {
-            name: formData.listName.value
+            listName: formData.listName.value
         };
+        console.log(newList);
         _listService.addList(newList);
-        _drawLists;
+        _drawLists();
     }
 
-    addTasks(event) {
+    addTask(event, listIndex) {
+        console.log('addTask called', event, listIndex);
         event.preventDefault();
         _listService.addTask(event.target.taskName.value, listIndex);
         _drawLists();
     }
 
     removeList(listIndex) {
+        console.log('remove called', listIndex);
         if (!window.confirm("Please Confirm Deletion of Your To-Do List")) {
             return;
         }
