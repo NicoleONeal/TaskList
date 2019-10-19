@@ -31,10 +31,10 @@ export default class ListController {
         event.preventDefault();
         _listService.addTask(event.target.taskName.value, listIndex);
         _drawLists();
-    };
+    }
 
     removeList(listIndex) {
-        if (!window.confirm("Please Confirm Deletion of Your List")) {
+        if (!window.confirm("Please Confirm Deletion of Your To-Do List")) {
             return;
         }
         _listService.removeList(listIndex);
