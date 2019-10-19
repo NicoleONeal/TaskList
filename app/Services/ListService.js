@@ -4,7 +4,7 @@ let _state = {
     lists: []
 }
 
-export default class ValuesService {
+export default class listService {
     removeTask(listIndex, taskIndex) {
         _state.lists[listIndex].tasks.splice(taskIndex, 1);
         this.saveLists();
@@ -21,10 +21,11 @@ export default class ValuesService {
 
     addList(newList) {
         _state.lists.push(new List(newList));
-        this.loadLists();
+        this.saveLists();
     }
 
     constructor() {
+        console.log("testing list service");
         this.loadLists();
     }
 

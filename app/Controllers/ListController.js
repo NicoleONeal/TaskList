@@ -3,8 +3,8 @@ import ListService from "../Services/listService.js";
 let _listService = new ListService()
 
 function _drawLists() {
-    let template = "":
-        let lists = _listService.Lists;
+    let template = "";
+    let lists = _listService.Lists;
     lists.forEach((list, i) => {
         template += list.getTemplate(i);
     });
