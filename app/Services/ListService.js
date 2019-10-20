@@ -1,16 +1,7 @@
 import List from "../Models/list.js";
 
 let _state = {
-    // lists: []
-    lists: [{
-            listName: "List 1",
-            tasks: ['task 1 ', 'task 2', 'task3']
-        },
-        {
-            listName: "List 2",
-            tasks: ['task 1 ', 'task 2', 'task3']
-        }
-    ]
+    lists: []
 }
 
 export default class listService {

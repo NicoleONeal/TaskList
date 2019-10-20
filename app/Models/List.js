@@ -31,9 +31,10 @@ export default class List {
                 placeholder="New Task"
                 aria-label="New Task"
                 aria-describedby="button-addon2"
+                required
                 />
             <div class = "input-group-append">
-            <button class = "btn btn-secondary" type = "submit" >
+            <button class = "btn btn-secondary btn-sm" type = "submit" >
             Add New Task </button> 
             </div> 
         </div> 
@@ -41,7 +42,7 @@ export default class List {
         `;
         template += `
         <div class="btn-group" role="group" aria - label = "Basic example" >
-          <button type="button" class="btn btn-danger" onclick="app.controllers.listController.removeList(${index})">Delete To-Do List</button> 
+          <button type="button" class="btn btn-danger btn-sm" onclick="app.controllers.listController.removeList(${index})">Delete To-Do List</button> 
         </div>
         </div>
             `;
