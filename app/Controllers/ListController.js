@@ -13,7 +13,7 @@ function _drawLists() {
 
 export default class listController {
     constructor() {
-        console.log("testing list controller");
+        //console.log("testing list controller");
         _drawLists();
     }
 
@@ -24,20 +24,20 @@ export default class listController {
         let newList = {
             listName: formData.listName.value
         };
-        console.log(newList);
+        // console.log(newList);
         _listService.addList(newList);
         _drawLists();
     }
 
     addTask(event, listIndex) {
-        console.log('addTask called', event, listIndex);
+        // console.log('addTask called', event, listIndex);
         event.preventDefault();
         _listService.addTask(event.target.taskName.value, listIndex);
         _drawLists();
     }
 
     removeList(listIndex) {
-        console.log('remove called', listIndex);
+        // console.log('remove called', listIndex);
         if (!window.confirm("Please Confirm Deletion of Your To-Do List")) {
             return;
         }

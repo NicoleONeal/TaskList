@@ -25,7 +25,7 @@ export default class listService {
     }
 
     constructor() {
-        console.log("testing list service");
+        // console.log("testing list service");
         this.loadLists();
     }
 
