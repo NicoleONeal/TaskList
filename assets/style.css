@@ -1,3 +1,9 @@
 body {
     background: #DCDEDC;
 }
+
+.list-container {
+    border: 2px solid #3D4849;
+    margin: 10px;
+    padding: 10px;
+}

@@ -16,7 +16,8 @@ export default class List {
 
     getTemplate(index) {
         let template = `
-        <div class="col-4 border">
+        <div class="col-4">
+        <div class = "list-container"> 
         <h1>${this.listName}</h1>
         <h4>Tasks:</h4>
     `;
@@ -43,6 +44,7 @@ export default class List {
         template += `
         <div class="btn-group" role="group" aria - label = "Basic example" >
           <button type="button" class="btn btn-danger btn-sm" onclick="app.controllers.listController.removeList(${index})">Delete To-Do List</button> 
+        </div>
         </div>
         </div>
             `;

@@ -9,6 +9,8 @@ function _drawLists() {
         template += list.getTemplate(i);
     });
     document.querySelector("#lists").innerHTML = template;
+    document.getElementById("addnewlist").value = "";
+
 }
 
 export default class listController {
